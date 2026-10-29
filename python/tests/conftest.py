@@ -11,7 +11,7 @@ def mock_openai_chat_completion(**kwargs):
         # Example 1
         [
             {
-                "model": "gpt-3.5-turbo",
+                "model": "gpt-5.6-terra",
                 "top_p": 1,
                 "max_tokens": 3000,
                 "temperature": 1,
@@ -53,7 +53,7 @@ def mock_openai_chat_completion(**kwargs):
         # Example 2
         [
             {
-                "model": "gpt-3.5-turbo",
+                "model": "gpt-5.6-terra",
                 "temperature": 1,
                 "top_p": 1,
                 "stream": False,
@@ -103,7 +103,7 @@ def mock_openai_chat_completion_with_dependencies(**kwargs):
     response_map_list = [
         [
             {
-                "model": "gpt-3.5-turbo",
+                "model": "gpt-5.6-terra",
                 "top_p": 1,
                 "temperature": 1,
                 "stream": False,
@@ -141,7 +141,7 @@ def mock_openai_chat_completion_with_dependencies(**kwargs):
         # Example 2
         [
             {
-                "model": "gpt-3.5-turbo",
+                "model": "gpt-5.6-terra",
                 "temperature": 1,
                 "top_p": 1,
                 "stream": False,

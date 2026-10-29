@@ -22,7 +22,7 @@ def test_refine_chat_completion_params():
         input="test",
         metadata=PromptMetadata(
             model=ModelMetadata(
-                name="gpt-4",
+                name="gpt-5.6-sol",
                 settings={
                     "n": "3",
                     "stream": True,
@@ -74,7 +74,7 @@ async def test_get_output_text(set_temporary_env_vars):
 async def test_serialize():
     # Test with one input prompt and system. No output
     completion_params = {
-        "model": "gpt-3.5-turbo",
+        "model": "gpt-5.6-terra",
         "temperature": 0.7,
         "max_tokens": 900,
         "messages": [
@@ -85,7 +85,7 @@ async def test_serialize():
 
     aiconfig = AIConfigRuntime.create()
     serialized_prompts = await aiconfig.serialize(
-        "gpt-3.5-turbo", completion_params, prompt_name="the prompt"
+        "gpt-5.6-terra", completion_params, prompt_name="the prompt"
     )
     new_prompt = serialized_prompts[0]
 
@@ -96,9 +96,9 @@ async def test_serialize():
         metadata=PromptMetadata(
             **{
                 "model": {
-                    "name": "gpt-3.5-turbo",
+                    "name": "gpt-5.6-terra",
                     "settings": {
-                        "model": "gpt-3.5-turbo",
+                        "model": "gpt-5.6-terra",
                         "temperature": 0.7,
                         "max_tokens": 900,
                         "system_prompt": {
@@ -115,7 +115,7 @@ async def test_serialize():
 
     # Test with Completion params with an output
     completion_params = {
-        "model": "gpt-3.5-turbo",
+        "model": "gpt-5.6-terra",
         "temperature": 0.7,
         "max_tokens": 900,
         "messages": [
@@ -129,7 +129,7 @@ async def test_serialize():
     }
 
     serialized_prompts = await aiconfig.serialize(
-        "gpt-3.5-turbo", completion_params, "prompt"
+        "gpt-5.6-terra", completion_params, "prompt"
     )
     new_prompt = serialized_prompts[0]
 
@@ -139,9 +139,9 @@ async def test_serialize():
         metadata=PromptMetadata(
             **{
                 "model": {
-                    "name": "gpt-3.5-turbo",
+                    "name": "gpt-5.6-terra",
                     "settings": {
-                        "model": "gpt-3.5-turbo",
+                        "model": "gpt-5.6-terra",
                         "temperature": 0.7,
                         "max_tokens": 900,
                         "system_prompt": {
@@ -178,7 +178,7 @@ async def test_serialize():
     # Test completion params with a function call input
 
     completion_params = {
-        "model": "gpt-3.5-turbo",
+        "model": "gpt-5.6-terra",
         "temperature": 0.7,
         "max_tokens": 900,
         "messages": [
@@ -211,7 +211,7 @@ async def test_serialize():
     }
 
     serialized_prompts = await aiconfig.serialize(
-        "gpt-3.5-turbo", completion_params, "prompt"
+        "gpt-5.6-terra", completion_params, "prompt"
     )
     new_prompt = serialized_prompts[0]
     assert new_prompt == Prompt(
@@ -220,9 +220,9 @@ async def test_serialize():
         metadata=PromptMetadata(
             **{
                 "model": {
-                    "name": "gpt-3.5-turbo",
+                    "name": "gpt-5.6-terra",
                     "settings": {
-                        "model": "gpt-3.5-turbo",
+                        "model": "gpt-5.6-terra",
                         "temperature": 0.7,
                         "max_tokens": 900,
                         "system_prompt": {
@@ -260,7 +260,7 @@ async def test_serialize():
     )
 
     completion_params = {
-        "model": "gpt-3.5-turbo",
+        "model": "gpt-5.6-terra",
         "temperature": 0.7,
         "max_tokens": 900,
         "messages": [
@@ -313,7 +313,7 @@ async def test_serialize():
     }
 
     prompts = await aiconfig.serialize(
-        "gpt-3.5-turbo", completion_params, "prompt"
+        "gpt-5.6-terra", completion_params, "prompt"
     )
     new_prompt = prompts[1]
 
@@ -326,7 +326,7 @@ async def test_serialize():
         ),
         metadata={
             "model": {
-                "name": "gpt-3.5-turbo",
+                "name": "gpt-5.6-terra",
                 "settings": {
                     "functions": [
                         {
@@ -349,7 +349,7 @@ async def test_serialize():
                         }
                     ],
                     "max_tokens": 900,
-                    "model": "gpt-3.5-turbo",
+                    "model": "gpt-5.6-terra",
                     "system_prompt": {
                         "role": "system",
                         "content": "You are an expert decision maker",

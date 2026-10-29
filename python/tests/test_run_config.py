@@ -38,7 +38,7 @@ async def test_load_parametrized_data_config(set_temporary_env_vars):
         prompt2_resolved = await config.resolve("prompt2")
         # assert prompt1_resolved == {'model': 'gpt-3.5-turbo', 'top_p': 1, 'max_tokens': 3000, 'temperature': 1,  'messages': [{'content': 'Write me a MySQL query to get this final output: total revenue from sales for each product category. Use the tables relationships defined here: Employees are related to Departments through the &#x27;DepartmentID&#x27; field..', 'role': 'user'}]}
         assert prompt2_resolved == {
-            "model": "gpt-4",
+            "model": "gpt-5.6-sol",
             "top_p": 1,
             "max_tokens": 3000,
             "temperature": 1,
